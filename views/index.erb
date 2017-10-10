@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Massively Multiplayer Online Rock, Paper, Scissors</title>
+    <link rel="stylesheet" href="./stylesheets/stylesheet.css">
+  </head>
+
+  <body class="gameboard">
+    <header>
+      <h1>MMORPS</h1>
+    </header>
+
+    <% if session[:message] %>
+      <p><%= session[:message] %></p>
+    <% end %>
+
+    <h4>Player &nbsp&nbsp&nbsp&nbspScore </h4>
+    <p>Player:&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp     <%= session[:player_score] %></p>
+    <p>Computer:   <%= session[:computer_score] %></p>
+
+     <% if session[:game_over] == true %>
+      <p><%= session[:final_message] %></p>
+     <% else %>
+      <h2>Choose!<h3>
+      <% end %>
+
+      <% if session[:game_over] == false %>
+        <form action="/choice" method="post">
+          <div class="form-group">
+            <input type="submit" name="player_choice" value="Rock">
+            <input type="submit" name="player_choice" value="Paper">
+            <input type="submit" name="player_choice" value="Scissors">
+          </div>
+        </form>
+      <% else %>
+        <form action="/choice" method="post">
+          <div class="form-group">
+            <input type="submit" name="player_choice" value="Play Again">
+          </div>
+        </form>
+      <% end %>
+  </body>
+</html>

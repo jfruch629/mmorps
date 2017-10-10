@@ -1,0 +1,17 @@
+html {
+  background-color: #333333;
+  font-family: sans-serif;
+}
+
+body {
+  padding: 5px 10px;
+  background-color: #EFEFEF;
+  width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+
+}
+
+button {
+  padding: 1px 6px;
+}
